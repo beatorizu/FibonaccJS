@@ -1,8 +1,10 @@
 'use strict'
 
-const fibonacci = () => null
+const fibonacci = () => {
+    return []
+}
 
-const isFibonnaci = (num) => null
+const isFibonnaci = (num) => fibonacci().includes(num)
 
 module.exports = {
     fibonacci,
