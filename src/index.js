@@ -1,15 +1,10 @@
 'use strict'
 
 const fibonacci = () => {
-    let fibonacciSequence = [];
-    let j = 1;
-    let i = 0;
+    const fibonacciSequence = [0, 1];
 
     for (let k = 0; k < 14; k++) {
-        let t = i + j;
-        i = j;
-        j = t;
-        fibonacciSequence.push(t);
+        fibonacciSequence.push(fibonacciSequence.slice(-2).reduce((acc, value) => acc + value, 0));
     }
     return fibonacciSequence;
 }
