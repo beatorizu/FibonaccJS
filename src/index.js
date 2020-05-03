@@ -1,10 +1,22 @@
 'use strict'
 
-const fibonacci = () => {
-    const fibonacciSequence = [0, 1];
+function* fibonacciGenerator() {
+    let [current, next] = [0, 1];
 
-    for (let k = 0; k < 14; k++) {
-        fibonacciSequence.push(fibonacciSequence.slice(-2).reduce((acc, value) => acc + value, 0));
+    while(true) {
+        yield current;
+        [current, next] = [next, current + next];
+    }
+}
+
+const fibonacci = (edge=350) => {
+    const fibonacciSequence = [];
+
+    for (const number of fibonacciGenerator()) {
+        fibonacciSequence.push(number);
+        if (number > edge) {
+            break;
+        }
     }
     return fibonacciSequence;
 }
