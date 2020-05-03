@@ -15,10 +15,9 @@ const fibonacci = (edge=350) => {
     for (const number of fibonacciGenerator()) {
         fibonacciSequence.push(number);
         if (number > edge) {
-            break;
+            return fibonacciSequence;
         }
     }
-    return fibonacciSequence;
 }
 
 const isFibonnaci = (num) => fibonacci().includes(num)
