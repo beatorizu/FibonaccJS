@@ -16,6 +16,6 @@
     "mocha-junit-reporter": "^1.18.0"
   },
   "dependencies": {
-    "minimist": "^0.2.1"
+    "minimist": "^1.2.6"
   }
 }
